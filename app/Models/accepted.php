@@ -12,7 +12,7 @@ class accepted extends Model
     protected static $ignoreChangedAttributes = ['update_at'];
     protected $fillable = [
         'id',
-        'id_mahasiswa',
+        'id_user',
         'nilai_pengganti',
         'file'
     ];
