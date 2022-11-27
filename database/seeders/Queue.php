@@ -19,7 +19,7 @@ class Queue extends Seeder
             'tanggal_pelaksanaan'=>'101122',
             'jenjang_pelaksanaan'=>'International',
             'id_user'=>'1',
-            'status'=>'Process',
+            'status'=>'selesai',
             'rank'=>'1st place',
             'data'=>'Susah.pdf'
         ]);

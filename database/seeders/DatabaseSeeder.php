@@ -16,7 +16,8 @@ class DatabaseSeeder extends Seeder
         $this->call([
             Accepted::class,
             Mahasiswa::class,
-            Queue::class
+            Queue::class,
+            instansi::class
         ]);
         // \App\Models\User::factory(10)->create();
     }

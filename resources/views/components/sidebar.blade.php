@@ -17,6 +17,13 @@
     <hr class="sidebar-divider mb-0">
 
     <x-nav-link
+        text="PKL Jalur Instansi"
+        icon="tachometer-alt"
+        url="{{ route('admin.pendaftaranjalurinstansi') }}"
+        active="{{ request()->routeIs('admin.pendaftaranjalurinstansi') ? ' active' : '' }}"
+    />
+
+    <x-nav-link
         text="PKL Jalur Lomba"
         icon="tachometer-alt"
         url="{{ route('admin.pendaftaranjalurlomba') }}"

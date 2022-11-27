@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\{DashboardController, UserController, RoleController,
-AcceptedController, MahasiswaController, QueueController};
+AcceptedController, MahasiswaController, QueueController, InstansiController};
 use App\Models\queue;
 
 Route::get('/', function () {
@@ -32,10 +32,17 @@ Route::group([
     //pendaftaran jalur lomba
     Route::get('/pendaftaranjalurlomba', [QueueController::class, 'index'])->name('pendaftaranjalurlomba');
 	Route::get('/pendaftaranjalurlomba/create', [QueueController::class, 'create'])->name('pendaftaranjalurlomba.create');
-	Route::post('/pendaftaranjalurlomba/create', [QueueController::class, 'store'])->name('pendaftaranjalurlomba.create');
+	Route::post('/pendaftaranjalurlomba/store', [QueueController::class, 'store'])->name('pendaftaranjalurlomba.store');
 	Route::get('/pendaftaranjalurlomba/{id}/edit', [QueueController::class, 'edit'])->name('pendaftaranjalurlomba.edit');
 	Route::post('/pendaftaranjalurlomba/{id}/update', [QueueController::class, 'update'])->name('pendaftaranjalurlomba.update');
 	Route::post('/pendaftaranjalurlomba/{id}/delete', [QueueController::class, 'destroy'])->name('pendaftaranjalurlomba.delete');
+
+    Route::get('/pendaftaranjalurinstansi', [InstansiController::class, 'index'])->name('pendaftaranjalurinstansi');
+	Route::get('/pendaftaranjalurinstansi/create', [InstansiController::class, 'create'])->name('pendaftaranjalurinstansi.create');
+	Route::post('/pendaftaranjalurinstansi/store', [InstansiController::class, 'store'])->name('pendaftaranjalurinstansi.store');
+	Route::get('/pendaftaranjalurinstansi/{id}/edit', [InstansiController::class, 'edit'])->name('pendaftaranjalurinstansi.edit');
+	Route::post('/pendaftaranjalurinstansi/{id}/update', [InstansiController::class, 'update'])->name('pendaftaranjalurinstansi.update');
+	Route::post('/pendaftaranjalurinstansi/{id}/delete', [InstansiController::class, 'destroy'])->name('pendaftaranjalurinstansi.delete');
 
 	// Member menu
 	Route::get('/member', [UserController::class, 'index'])->name('member');

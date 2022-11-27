@@ -8,27 +8,27 @@
 	<x-alert type="success" message="{{ session()->get('success') }}" />
 	@endif
 	<x-card>
-		<form action="{{route('admin.pendaftaranjalurlomba.store')}}" method="post" enctype="multipart/form-data">
+		<form action="{{route('admin.pendaftaranjalurinstansi.store')}}" method="post">
 			@csrf
             <div class="row">
-				<div class="col-md-6">
-					<x-input text="Nama Lomba" name="nama_lomba" type="text" />
+				<div class="col-md-6" >
+					<x-input text="Nama Perusahaan" name="nama_perusahaan" type="text"/>
 				</div>
 				<div class="col-md-6">
-					<x-input text="Jenjang Pelaksanaan" name="jenjang_pelaksanaan" type="text" />
-				</div>
-			</div>
-            <div class="row">
-				<div class="col-md-6">
-					<x-input text="Rank" name="rank" type="text" />
-				</div>
-				<div class="col-md-6">
-					<x-input text="File" name="data" type="file" />
+					<x-input text="Tanggal Pelaksanaan" name="tanggal_masuk" type="date" />
 				</div>
 			</div>
             <div class="row">
 				<div class="col-md-6">
-					<x-input text="Tanggal Pelaksanaan" name="tanggal_pelaksanaan" type="date" />
+					<x-input text="Tanggal Keluar" name="tanggal_selesai" type="date" />
+				</div>
+				<div class="col-md-6">
+					<x-input text="Nama Direktur" name="nama_direktur" type="text" />
+				</div>
+			</div>
+            <div class="row">
+				<div class="col-md-6">
+					<x-input text="Alamat Kantor" name="alamat_kantor" type="text" />
 				</div>
 			</div>
 

@@ -1,5 +1,5 @@
 <x-app-layout>
-	<x-slot name="title">Pendaftaran Magang Jalur Lomba</x-slot>
+	<x-slot name="title">Pendaftaran Magang Jalur Instansi</x-slot>
 
 	@if(session()->has('success'))
 	<x-alert type="success" message="{{ session()->get('success') }}" />
@@ -8,38 +8,38 @@
 	<x-card>
 		<x-slot name="title">Your List</x-slot>
 		<x-slot name="option">
-			<a href="{{ route('admin.pendaftaranjalurlomba.create') }}" class="btn btn-success">
+			<a href="{{route('admin.pendaftaranjalurinstansi.create')}}" class="btn btn-success">
 				<i class="fas fa-plus"></i>
 			</a>
 		</x-slot>
 		<table class="table table-bordered">
 			<thead>
-				<th>Nama Lomba</th>
+				<th>Nama Perusahaan</th>
 				<th>Tanggal Pelaksanaan</th>
-				<th>Jenjang</th>
-                <th>Ranking</th>
-				<th>Status</th>
-                <th>Data</th>
+				<th>Tanggal Berakhir</th>
+                <th>Nama Direktur</th>
+				<th>Alaman</th>
+                <th>Status</th>
                 <th>Option</th>
 			</thead>
 			<tbody>
-                @foreach ($queue as $queue)
+                @foreach ($data as $data)
                     <tr>
-                        <td>{{$queue->nama_lomba}}</td>
-                        <td>{{$queue->tanggal_pelaksanaan}}</td>
-                        <td>{{$queue->jenjang_pelaksanaan}}</td>
-                        <td>{{$queue->rank}}</td>
-                        <td><label class="badge badge-success">{{ $queue->status }}</label></td>
-                        <td>{{$queue->data}}</td>
+                        <td>{{$data->nama_perusahaan}}</td>
+                        <td>{{$data->tanggal_masuk}}</td>
+                        <td>{{$data->tanggal_selesai}}</td>
+                        <td>{{$data->nama_direktur}}</td>
+                        <td>{{$data->alamat_kantor}}</td>
+                        <td><label class="badge badge-success">{{ $data->status }}</label></td>
                         <td class="text-center">
                             {{-- <button type="button" class="btn btn-info mr-1 info"
                                 data-name="" data-created="">
                                 <i class="fas fa-eye"></i>
                             </button> --}}
-                            @if ($queue->status == "proses")
-                                <a href="{{ route('admin.pendaftaranjalurlomba.edit',$queue->id) }}" class="btn btn-primary mr-1"><i class="fas fa-edit"></i></a>
+                            @if ($data->status == "proses")
+                                <a href="{{ route('admin.pendaftaranjalurlomba.edit',$data->id) }}" class="btn btn-primary mr-1"><i class="fas fa-edit"></i></a>
                             @endif
-                            <form action="{{route('admin.pendaftaranjalurlomba.delete',$queue->id )}}" method="post" style="display: inline-block;">
+                            <form action="{{route('admin.pendaftaranjalurlomba.delete',$data->id )}}" method="post" style="display: inline-block;">
                                 @csrf
                                 <button type="button" class="btn btn-danger delete"><i class="fas fa-trash"></i></button>
                             </form>
