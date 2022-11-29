@@ -6,7 +6,7 @@
 	@endif
 
 	<x-card>
-		<x-slot name="title">Your List</x-slot>
+		<x-slot name="title">List Pengajuan {{ Auth::user()->name }}</x-slot>
 		<x-slot name="option">
 			<a href="{{route('admin.pendaftaranjalurinstansi.create')}}" class="btn btn-success">
 				<i class="fas fa-plus"></i>
