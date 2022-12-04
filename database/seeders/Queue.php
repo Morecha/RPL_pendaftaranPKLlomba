@@ -15,12 +15,18 @@ class Queue extends Seeder
     public function run()
     {
         DB::table('queues')->insert([
+            'id_pengajuan'=>'1',
             'nama_lomba'=>'HackerRank',
-            'tanggal_pelaksanaan'=>'101122',
+            'kategori_lomba'=>'AI stars',
+            'penyelenggara'=>'google.inc',
+            'produk_lomba'=>'Movement Prediction on the Tornado agains preasure effect',
+            'pembimbing'=>'Elon Musk',
+            'URL_lomba'=>'google.com',
+            'tempat_lomba'=>'Online',
+            'sumber_dana'=>'Pribadi',
             'jenjang_pelaksanaan'=>'International',
-            'id_user'=>'1',
-            'status'=>'selesai',
             'rank'=>'1st place',
+            'proposal'=>'Susah.pdf',
             'data'=>'Susah.pdf'
         ]);
     }

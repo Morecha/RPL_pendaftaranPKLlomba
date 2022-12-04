@@ -15,16 +15,17 @@ class CreateInstansisTable extends Migration
     {
         Schema::create('instansis', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('id_user')->unsigned()->nullable();
+            $table->bigInteger('id_pengajuan')->unsigned()->nullable();
             $table->string('nama_perusahaan')->nullable();
-            $table->date('tanggal_masuk')->nullable();
-            $table->date('tanggal_selesai')->nullable();
-            $table->string('nama_direktur')->nullable();
+            $table->string('URL_medsos')->nullable();   #new
+            $table->string('penerima_surat')->nullable();   #new
+            $table->string('jabatan')->nullable();  #new
+            $table->string('objek')->nullable();    #new
+            $table->string('URL_pkl')->nullable();  #new
             $table->string('alamat_kantor')->nullable();
-            $table->string('status')->nullable();
             $table->timestamps();
 
-            $table->foreign('id_user')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('id_pengajuan')->references('id')->on('pengajuans')->onUpdate('cascade')->onDelete('cascade');
         });
     }
 

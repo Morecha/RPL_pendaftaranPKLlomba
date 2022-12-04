@@ -32,9 +32,14 @@ Route::group([
     //pendaftaran jalur lomba
     Route::get('/pendaftaranjalurlomba', [QueueController::class, 'index'])->name('pendaftaranjalurlomba');
 	Route::get('/pendaftaranjalurlomba/create', [QueueController::class, 'create'])->name('pendaftaranjalurlomba.create');
+    // Route::get('/pendaftaranjalurlomba/create2', [QueueController::class, 'create2'])->name('pendaftaranjalurlomba.create2');
 	Route::post('/pendaftaranjalurlomba/store', [QueueController::class, 'store'])->name('pendaftaranjalurlomba.store');
 	Route::get('/pendaftaranjalurlomba/{id}/edit', [QueueController::class, 'edit'])->name('pendaftaranjalurlomba.edit');
 	Route::post('/pendaftaranjalurlomba/{id}/update', [QueueController::class, 'update'])->name('pendaftaranjalurlomba.update');
+    Route::get('/pendaftaranjalurlomba/{id}/kelompok', [QueueController::class, 'kelompok'])->name('pendaftaranjalurlomba.kelompok');
+    Route::post('/pendaftaranjalurlomba/{id}/storekelompok', [QueueController::class, 'storekelompok'])->name('pendaftaranjalurlomba.storekelompok');
+    Route::get('/pendaftaranjalurlomba/{id}/show', [QueueController::class,'show'])->name('pendaftaranjalurlomba.show');
+    Route::get('/pendaftaranjalurlomba/{id}/proposal', [QueueController::class,'proposal'])->name('pendaftaranjalurlomba.proposal');
 	Route::post('/pendaftaranjalurlomba/{id}/delete', [QueueController::class, 'destroy'])->name('pendaftaranjalurlomba.delete');
 
     Route::get('/pendaftaranjalurinstansi', [InstansiController::class, 'index'])->name('pendaftaranjalurinstansi');

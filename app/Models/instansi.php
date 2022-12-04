@@ -14,9 +14,13 @@ class instansi extends Model
         'id',
         'id_user',
         'nama_perusahaan',
+        'URL_medsos',
+        'penerima_surat',
+        'jabatan',
+        'objek',
+        'URL_pkl',
         'tanggal_masuk',
         'tanggal_selesai',
-        'nama_direktur',
         'alamat_kantor',
         'status'
     ];

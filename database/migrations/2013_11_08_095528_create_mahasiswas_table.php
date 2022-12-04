@@ -18,6 +18,7 @@ class CreateMahasiswasTable extends Migration
             $table->bigInteger('id_user')->nullable();
             $table->string('nama')->nullable();
             $table->bigInteger('nim')->nullable();
+            $table->bigInteger('HP')->nullable();
             $table->integer('angkatan')->nullable();
             $table->integer('sks')->nullable();
             $table->timestamps();

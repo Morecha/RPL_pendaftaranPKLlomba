@@ -12,12 +12,21 @@ class queue extends Model
     protected static $ignoreChangedAttributes = ['update_at'];
     protected $fillable = [
         'id',
+        'id_pengajuan',
         'nama_lomba',
+        'pembimbing',
+        'kategori_lomba',
+        'penyelenggara',
+        'URL_lomba',
+        'tempat_lomba',
+        'produk_lomba',
+        'sumber_dana',
         'tanggal_pelaksanaan',
         'jenjang_pelaksanaan',
         'id_user',
         'status',
         'rank',
-        'data'
+        'data',
+        'proposal',
     ];
 }

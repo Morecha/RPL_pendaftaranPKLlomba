@@ -40,9 +40,14 @@ class InstansiController extends Controller
     {
         $this->validate($request, [
             "nama_perusahaan"=>"required",
+            "alamat_kantor"=>"required",
+            "penerima_surat"=>"required",
+            "jabatan"=>"required",
+            "objek"=>"required",
+            "URL_medsos"=>"required",
+            "URL_pkl"=>"required",
             "tanggal_masuk"=>"required",
             "tanggal_selesai"=>"required",
-            "nama_direktur" => "required",
             "alamat_kantor"=>"required"
         ]);
 
@@ -87,7 +92,7 @@ class InstansiController extends Controller
      */
     public function update(Request $request, instansi $instansi)
     {
-        //
+
     }
 
     /**
@@ -96,8 +101,11 @@ class InstansiController extends Controller
      * @param  \App\Models\instansi  $instansi
      * @return \Illuminate\Http\Response
      */
-    public function destroy(instansi $instansi)
+    public function destroy(instansi $instansi, $id)
     {
-        //
+        $destroy = instansi::find($id);
+        $destroy->delete();
+
+        return redirect('admin/pendaftaranjalurinstansi')->with('success','Berhasil Delete');
     }
 }

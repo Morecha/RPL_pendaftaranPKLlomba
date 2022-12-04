@@ -16,6 +16,7 @@ class DatabaseSeeder extends Seeder
         $this->call([
             Accepted::class,
             Mahasiswa::class,
+            PengajuanSeeder::class,
             Queue::class,
             instansi::class
         ]);

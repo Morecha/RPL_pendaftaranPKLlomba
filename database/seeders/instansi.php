@@ -15,13 +15,14 @@ class instansi extends Seeder
     public function run()
     {
         DB::table('instansis')->insert([
-            'id_user'=>'1',
+            'id_pengajuan'=>'2',
             'nama_perusahaan'=>'PT. Pilar Cipta Solusi Integratika',
-            'tanggal_masuk'=>'251021',
-            'tanggal_selesai'=>'250222',
-            'nama_direktur'=>'pak rizal',
+            'URL_medsos'=>'www.pilarsolusi.com',
+            'penerima_surat'=>'Pak Rizal',
+            'jabatan'=>'direktur',
+            'objek'=>'Konsultan Teknologi Informasi',
+            'URL_pkl'=>'https://id.linkedin.com/company/pt-pilar-cipta-solusi-integratika',
             'alamat_kantor'=>'Kepuh GK. III No. 1092C/GK III, RT 44 RW 12, Klitren, Gondokusuman, Kota Yogyakarta, Daerah Istimewa Yogyakarta, Indonesia 55222',
-            'status'=>'selesai'
         ]);
     }
 }

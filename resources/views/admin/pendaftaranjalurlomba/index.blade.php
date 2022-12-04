@@ -19,24 +19,31 @@
 				<th>Jenjang</th>
                 <th>Ranking</th>
 				<th>Status</th>
-                <th>Data</th>
+                <th style="width: 5%">Data</th>
+                <th style="width: 5%">Proposal</th>
                 <th>Option</th>
 			</thead>
 			<tbody>
                 @foreach ($queue as $queue)
                     <tr>
                         <td>{{$queue->nama_lomba}}</td>
-                        <td>{{$queue->tanggal_pelaksanaan}}</td>
+                        <td>{{$queue->awal_pelaksanaan}}</td>
                         <td>{{$queue->jenjang_pelaksanaan}}</td>
                         <td>{{$queue->rank}}</td>
                         <td><label class="badge badge-success">{{ $queue->status }}</label></td>
-                        <td>{{$queue->data}}</td>
-                        <td class="text-center">
-                            {{-- <button type="button" class="btn btn-info mr-1 info"
-                                data-name="" data-created="">
+                        <td>
+                            <a href="{{ route('admin.pendaftaranjalurlomba.show',$queue->id) }}" target="_blank" class="btn btn-info mr-1 info">
                                 <i class="fas fa-eye"></i>
-                            </button> --}}
-                            @if ($queue->status == "proses")
+                            </a>
+                        </td>
+                        <td>
+                            <a href="{{ route('admin.pendaftaranjalurlomba.proposal',$queue->id) }}" target="_blank" class="btn btn-info mr-1 info">
+                                <i class="fas fa-eye"></i>
+                            </a>
+                        </td>
+                        <td class="text-center">
+                            @if ($queue->status == "proses" || $queue->status == "revisi")
+                                <a href="{{ route('admin.pendaftaranjalurlomba.kelompok',$queue->id) }}" class="btn btn-primary mr-1"><i class="fas fa-users"></i></a>
                                 <a href="{{ route('admin.pendaftaranjalurlomba.edit',$queue->id) }}" class="btn btn-primary mr-1"><i class="fas fa-edit"></i></a>
                             @endif
                             <form action="{{route('admin.pendaftaranjalurlomba.delete',$queue->id )}}" method="post" style="display: inline-block;">
